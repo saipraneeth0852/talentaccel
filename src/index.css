@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ─── Talent Accel Brand: Light Mode ─── */
+    /* Background: Primary #FFFFFF, Secondary #F9FAFB, Surface #F3F4F6 */
+    --background: 0 0% 100%;
+    --foreground: 221 39% 11%;        /* Text Primary #111827 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 39% 11%;
+
+    /* Primary: #0A72FF */
+    --primary: 214.5 100% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: #00E59D */
+    --secondary: 161 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted surfaces: #F9FAFB / #F3F4F6 */
+    --muted: 210 17% 98%;
+    --muted-foreground: 220 9% 46%;   /* Text Tertiary #6B7280 */
+
+    /* Accent = secondary green */
+    --accent: 161 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Focus/Destructive: #DA365C */
+    --destructive: 346 69% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 14% 91%;            /* #E5E7EB */
+    --input: 220 14% 91%;
+    --ring: 214.5 100% 52%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 210 17% 98%;
+    --sidebar-foreground: 220 9% 34%;
+    --sidebar-primary: 214.5 100% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 221 39% 11%;
+    --sidebar-border: 220 14% 91%;
+    --sidebar-ring: 214.5 100% 52%;
+
+    /* ─── Custom brand tokens ─── */
+    --brand-dark: 214.5 100% 20%;     /* Deep primary blue */
+    --brand-blue: 214.5 100% 52%;       /* Primary #0A72FF */
+    --brand-green: 161 100% 45%;      /* Secondary #00E59D */
+    --brand-light: 210 17% 98%;       /* #F9FAFB */
+    --brand-surface: 220 14% 96%;     /* #F3F4F6 */
+
+    /* Status colors */
+    --success: 142 76% 36%;           /* #16A34A */
+    --warning: 38 92% 50%;            /* #F59E0B */
+    --info: 200 98% 39%;              /* #0284C7 */
+
+    /* ─── Gradients ─── */
+    --gradient-hero: linear-gradient(135deg, hsl(214.5 100% 40%) 0%, hsl(214.5 100% 52%) 45%, hsl(161 100% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(214.5 100% 52%) 0%, hsl(161 100% 45%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 17% 98%) 100%);
+
+    --shadow-card: 0 1px 3px 0 hsl(214.5 100% 52% / 0.04), 0 4px 16px -2px hsl(214.5 100% 52% / 0.06);
+    --shadow-card-hover: 0 4px 12px 0 hsl(214.5 100% 52% / 0.08), 0 12px 32px -4px hsl(214.5 100% 52% / 0.1);
+    --shadow-float: 0 8px 32px -4px hsl(214.5 100% 52% / 0.12), 0 16px 48px -8px hsl(214.5 100% 52% / 0.08);
+  }
+
+  .dark {
+    /* ─── Talent Accel Brand: Dark Mode ─── */
+    /* Background Primary/Elevated: #111827, Surface: #1F2937 */
+    --background: 221 39% 11%;        /* #111827 */
+    --foreground: 0 0% 98%;           /* Near-white text */
+
+    --card: 215 28% 17%;              /* #1F2937 */
+    --card-foreground: 0 0% 98%;
+
+    --popover: 215 28% 17%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Primary stays #0A72FF */
+    --primary: 214.5 100% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary stays #00E59D */
+    --secondary: 161 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 28% 22%;
+    --muted-foreground: 217 10% 64%;  /* #9CA3AF */
+
+    --accent: 161 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 346 69% 53%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 28% 22%;
+    --input: 215 28% 22%;
+    --ring: 214.5 100% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+}

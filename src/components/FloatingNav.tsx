@@ -1,0 +1,156 @@
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Home, Briefcase, Globe, Building2, FileText, Lightbulb, Users, Phone, LayoutGrid } from "lucide-react";
+import { LogoMark } from "./LogoMark";
+import { cn } from "@/lib/utils";
+
+const navItems = [
+  { label: "Home", href: "/", hash: "", icon: Home },
+  { label: "Services", href: "/#services", hash: "#services", icon: Briefcase },
+  { label: "Offshore", href: "/offshore-teams", hash: "", icon: Globe },
+  { label: "Industries", href: "/#industries", hash: "#industries", icon: Building2 },
+  { label: "Case Studies", href: "/#case-studies", hash: "#case-studies", icon: FileText },
+  { label: "Insights", href: "/#insights", hash: "#insights", icon: Lightbulb },
+  { label: "About", href: "/#why-talentaccel", hash: "#why-talentaccel", icon: Users },
+  { label: "Contact", href: "/#contact", hash: "#contact", icon: Phone },
+];
+
+const mobileNavItems = [
+  { label: "Home", href: "/", hash: "", icon: Home },
+  { label: "Services", href: "/#services", hash: "#services", icon: Briefcase },
+  { label: "Offshore", href: "/offshore-teams", hash: "", icon: Globe },
+  { label: "About", href: "/#why-talentaccel", hash: "#why-talentaccel", icon: Users },
+  { label: "Contact", href: "/#contact", hash: "#contact", icon: Phone },
+];
+
+export const FloatingNav = () => {
+  const location = useLocation();
+  const [activeHash, setActiveHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    setActiveHash(location.hash);
+  }, [location.hash]);
+
+  const handleNavClick = (href: string) => {
+    if (href.includes("#")) {
+      const [path, hash] = href.split("#");
+      const currentPath = location.pathname === "/" ? "" : location.pathname;
+      const targetPath = path === "/" ? "" : path;
+
+      if (currentPath === targetPath) {
+        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        setActiveHash(`#${hash}`);
+      }
+    } else if (href === "/") {
+      if (location.pathname === "/") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setActiveHash("");
+    } else {
+      setActiveHash("");
+    }
+  };
+
+  const isItemActive = (item: typeof navItems[0]) => {
+    if (item.href === "/") {
+      return location.pathname === "/" && !activeHash;
+    }
+    if (item.hash) {
+      return location.pathname === "/" && activeHash === item.hash;
+    }
+    return location.pathname === item.href;
+  };
+
+  return (
+    <>
+      {/* Floating logo at top right */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="fixed top-5 right-6 z-50 flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-float"
+      >
+        <LogoMark size={32} />
+        <span className="text-base font-bold text-foreground tracking-tight hidden sm:inline">
+          Talent<span className="text-primary">Accel</span>
+        </span>
+      </motion.div>
+
+      {/* Desktop floating nav */}
+      <motion.nav
+        initial={{ y: 40, x: "-50%", opacity: 0 }}
+        animate={{ y: 0, x: "-50%", opacity: 1 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
+        style={{ left: "50%" }}
+        className="fixed bottom-6 z-50 hidden lg:flex items-center gap-0.5 px-1.5 py-1.5 rounded-full bg-card/80 backdrop-blur-xl border border-border shadow-float max-w-[98vw] w-fit"
+      >
+        {navItems.map((item) => {
+          const active = isItemActive(item);
+          return (
+            <Link
+              key={item.label}
+              to={item.href}
+              onClick={() => handleNavClick(item.href)}
+              className={cn(
+                "relative px-3 py-2 text-sm font-medium transition-colors duration-200 rounded-full whitespace-nowrap",
+                active ? "text-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+              )}
+            >
+              {active && (
+                <motion.span
+                  layoutId="bubble"
+                  className="absolute inset-0 z-[-1] bg-secondary/10 rounded-full"
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              {item.label}
+            </Link>
+          );
+        })}
+        <Link
+          to="/#contact"
+          onClick={() => handleNavClick("/#contact")}
+          className="ml-1 px-4 py-2 text-sm font-semibold rounded-full bg-primary text-primary-foreground hover:opacity-90 transition-all duration-200 hover:shadow-lg active:scale-95 whitespace-nowrap"
+        >
+          Book a Consultation
+        </Link>
+      </motion.nav>
+
+      {/* Mobile floating bottom nav */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-card/90 backdrop-blur-xl border-t border-border pb-safe shadow-[0_-8px_32px_-12px_rgba(0,0,0,0.1)]">
+        <div className="flex items-center justify-around py-2 px-2">
+          {mobileNavItems.map((item) => {
+            const Icon = item.icon;
+            const active = isItemActive(item);
+            return (
+              <Link
+                key={item.label}
+                to={item.href}
+                onClick={() => handleNavClick(item.href)}
+                className={cn(
+                  "flex flex-col items-center gap-1 px-3 py-1.5 transition-all duration-200",
+                  active ? "text-secondary scale-110" : "text-muted-foreground"
+                )}
+              >
+                <div className={cn(
+                  "p-1 rounded-lg transition-colors",
+                  active && "bg-secondary/10"
+                )}>
+                  <Icon className="w-5 h-5" />
+                </div>
+                <span className="text-[10px] font-bold tracking-tight">{item.label}</span>
+                {active && (
+                  <motion.div
+                    layoutId="activeDot"
+                    className="w-1 h-1 rounded-full bg-secondary mt-0.5"
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+      </nav>
+    </>
+  );
+};
