@@ -1,4 +1,5 @@
 import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { LogoMark } from "./LogoMark";
 
 const footerLinks = {
   Company: ["About Us", "Leadership", "Careers", "Contact"],
@@ -12,7 +13,10 @@ export const Footer = () => (
     <div className="container mx-auto px-6 lg:px-12">
       <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
         <div className="lg:col-span-1">
-          <h3 className="text-xl font-bold mb-4">TalentAccel</h3>
+          <div className="flex items-center gap-2.5 mb-4">
+            <LogoMark size={28} className="brightness-0 invert" />
+            <span className="text-xl font-bold">Talent<span className="text-secondary">Accel</span></span>
+          </div>
           <p className="text-primary-foreground/60 text-sm leading-relaxed mb-6">
             Building the teams that accelerate your business.
           </p>

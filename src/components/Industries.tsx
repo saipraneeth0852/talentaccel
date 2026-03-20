@@ -14,7 +14,7 @@ export const Industries = () => (
   <section id="industries" className="py-24 lg:py-32 bg-muted/30">
     <div className="container mx-auto px-6 lg:px-12">
       <AnimatedSection className="text-center mb-16">
-        <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Industries</p>
+        <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Industries</p>
         <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">We specialize in hiring for high-growth sectors</h2>
       </AnimatedSection>
 

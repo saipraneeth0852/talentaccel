@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, Check, Users, Globe, Shield, Zap, Code, Brain, Palette, BarChart3, Headphones, Megaphone, Radio, Cpu, Settings } from "lucide-react";
+import { ArrowRight, ChevronRight, Check, Users, Globe, Shield, Zap, Code, Brain, Palette, BarChart3, Cpu } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { Footer } from "@/components/Footer";
 import offshoreHero from "@/assets/offshore-hero.png";
@@ -80,7 +80,7 @@ const OffshoreTeams = () => (
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <a href="/#contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-secondary text-secondary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-200 hover:-translate-y-0.5">
+              <a href="/#contact" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:opacity-90 transition-all duration-200 hover:-translate-y-0.5">
                 Book a Consultation <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#engagement" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-border text-foreground font-semibold text-sm hover:bg-muted transition-all">
@@ -99,7 +99,7 @@ const OffshoreTeams = () => (
     <section className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">The India Advantage</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">The India Advantage</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Why Companies Build Teams in India</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">India has become a global hub for technology, product development, and business operations.</p>
         </AnimatedSection>
@@ -109,8 +109,8 @@ const OffshoreTeams = () => (
             return (
               <StaggerItem key={a.title}>
                 <div className="p-6 rounded-2xl bg-card border border-border shadow-card h-full">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-secondary" />
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-bold text-foreground mb-2">{a.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{a.desc}</p>
@@ -126,14 +126,14 @@ const OffshoreTeams = () => (
     <section className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Our Model</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Our Model</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">What TalentAccel Provides</h2>
         </AnimatedSection>
         <StaggerContainer className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {services.map((s, i) => (
             <StaggerItem key={s.title}>
               <div className="p-6 rounded-2xl bg-card border border-border shadow-card h-full">
-                <span className="text-3xl font-extrabold text-muted/50 mb-3 block">0{i + 1}</span>
+                <span className="text-3xl font-extrabold text-primary/20 mb-3 block">0{i + 1}</span>
                 <h3 className="font-bold text-foreground mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
@@ -147,7 +147,7 @@ const OffshoreTeams = () => (
     <section className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Talent</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Talent</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Roles We Help Build</h2>
         </AnimatedSection>
         <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -156,7 +156,7 @@ const OffshoreTeams = () => (
             return (
               <StaggerItem key={cat.category}>
                 <div className="p-6 rounded-2xl bg-card border border-border shadow-card h-full">
-                  <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-bold text-foreground mb-3 text-sm">{cat.category}</h3>
@@ -179,7 +179,7 @@ const OffshoreTeams = () => (
     <section id="engagement" className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Flexible Models</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Flexible Models</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Engagement Models</h2>
         </AnimatedSection>
         <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -199,7 +199,7 @@ const OffshoreTeams = () => (
     <section className="py-24 lg:py-32 bg-muted/30">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Scale</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Scale</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Team Scaling Timeline</h2>
         </AnimatedSection>
         <AnimatedSection className="max-w-2xl mx-auto">
@@ -215,7 +215,7 @@ const OffshoreTeams = () => (
                 />
                 <div className="text-3xl font-extrabold text-foreground">{s.count}</div>
                 <div className="text-xs text-muted-foreground">{s.label}</div>
-                <div className="text-xs font-semibold text-secondary mt-1">{s.time}</div>
+                <div className="text-xs font-semibold text-primary mt-1">{s.time}</div>
               </div>
             ))}
           </div>
@@ -227,7 +227,7 @@ const OffshoreTeams = () => (
     <section className="py-24 lg:py-32">
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="text-center mb-16">
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Value</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Value</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Cost Advantage Comparison</h2>
         </AnimatedSection>
         <AnimatedSection className="max-w-2xl mx-auto">
@@ -255,7 +255,7 @@ const OffshoreTeams = () => (
       <div className="container mx-auto px-6 lg:px-12">
         <AnimatedSection className="max-w-3xl mx-auto">
           <div className="p-10 rounded-3xl bg-card border border-border shadow-card">
-            <span className="inline-block px-3 py-1 rounded-full bg-secondary/10 text-secondary text-xs font-semibold mb-6">Case Study</span>
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold mb-6">Case Study</span>
             <h3 className="text-2xl font-bold text-foreground mb-3">US SaaS Company Expansion</h3>
             <div className="grid sm:grid-cols-3 gap-4 mb-6">
               <div className="p-4 rounded-xl bg-muted/50 text-center">

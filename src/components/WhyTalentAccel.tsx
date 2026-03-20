@@ -13,7 +13,7 @@ export const WhyTalentAccel = () => (
     <div className="container mx-auto px-6 lg:px-12">
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <AnimatedSection>
-          <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Why Us</p>
+          <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Why Us</p>
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">Why TalentAccel</h2>
           <p className="text-muted-foreground leading-relaxed mb-8 max-w-lg">
             We're not a generic recruitment agency. We're a startup-focused talent advisory partner that combines deep hiring expertise with end-to-end HR infrastructure.
@@ -31,8 +31,8 @@ export const WhyTalentAccel = () => (
             return (
               <StaggerItem key={r.title}>
                 <div className="p-6 rounded-2xl bg-card border border-border shadow-card h-full">
-                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-secondary" />
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="font-bold text-foreground mb-2">{r.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{r.desc}</p>

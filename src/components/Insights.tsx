@@ -13,7 +13,7 @@ export const Insights = () => (
   <section id="insights" className="py-24 lg:py-32">
     <div className="container mx-auto px-6 lg:px-12">
       <AnimatedSection className="text-center mb-16">
-        <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Insights</p>
+        <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Insights</p>
         <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Latest from Our Blog</h2>
       </AnimatedSection>
 
@@ -31,7 +31,7 @@ export const Insights = () => (
               <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">{a.desc}</p>
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">{a.read} read</span>
-                <ArrowRight className="w-4 h-4 text-secondary group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="w-4 h-4 text-primary group-hover:translate-x-1 transition-transform duration-200" />
               </div>
             </motion.div>
           </StaggerItem>

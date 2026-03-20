@@ -100,7 +100,7 @@ export const FloatingNav = () => {
               {active && (
                 <motion.span
                   layoutId="bubble"
-                  className="absolute inset-0 z-[-1] bg-secondary/10 rounded-full"
+                  className="absolute inset-0 z-[-1] bg-primary/10 rounded-full"
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
@@ -130,12 +130,12 @@ export const FloatingNav = () => {
                 onClick={() => handleNavClick(item.href)}
                 className={cn(
                   "flex flex-col items-center gap-1 px-3 py-1.5 transition-all duration-200",
-                  active ? "text-secondary scale-110" : "text-muted-foreground"
+                  active ? "text-primary scale-110" : "text-muted-foreground"
                 )}
               >
                 <div className={cn(
                   "p-1 rounded-lg transition-colors",
-                  active && "bg-secondary/10"
+                  active && "bg-primary/10"
                 )}>
                   <Icon className="w-5 h-5" />
                 </div>
@@ -143,7 +143,7 @@ export const FloatingNav = () => {
                 {active && (
                   <motion.div
                     layoutId="activeDot"
-                    className="w-1 h-1 rounded-full bg-secondary mt-0.5"
+                    className="w-1 h-1 rounded-full bg-primary mt-0.5"
                   />
                 )}
               </Link>

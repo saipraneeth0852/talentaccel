@@ -29,7 +29,7 @@ export const CaseStudies = () => (
   <section id="case-studies" className="py-24 lg:py-32 bg-muted/30">
     <div className="container mx-auto px-6 lg:px-12">
       <AnimatedSection className="text-center mb-16">
-        <p className="text-sm font-semibold text-secondary tracking-wide uppercase mb-3">Results</p>
+        <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Results</p>
         <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">Case Studies</h2>
         <p className="text-muted-foreground max-w-2xl mx-auto">
           Real outcomes from companies that trusted TalentAccel to build their teams.
@@ -59,7 +59,7 @@ export const CaseStudies = () => (
                 })}
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{c.desc}</p>
-              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary group-hover:gap-2.5 transition-all duration-200">
+              <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-all duration-200">
                 Read full case study <ArrowRight className="w-3.5 h-3.5" />
               </span>
             </motion.div>
