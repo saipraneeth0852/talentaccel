@@ -7,6 +7,16 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { FloatingNav } from "@/components/FloatingNav";
 import Index from "./pages/Index.tsx";
 import OffshoreTeams from "./pages/OffshoreTeams.tsx";
+import About from "./pages/About.tsx";
+import Careers from "./pages/Careers.tsx";
+import Contact from "./pages/Contact.tsx";
+import Blog from "./pages/Blog.tsx";
+import CaseStudiesPage from "./pages/CaseStudiesPage.tsx";
+import Industries from "./pages/Industries.tsx";
+import TalentAcquisition from "./pages/services/TalentAcquisition.tsx";
+import DedicatedTeams from "./pages/services/DedicatedTeams.tsx";
+import PayrollCompliance from "./pages/services/PayrollCompliance.tsx";
+import HrAdvisory from "./pages/services/HrAdvisory.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -40,6 +50,16 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/offshore-teams" element={<OffshoreTeams />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
+          <Route path="/industries" element={<Industries />} />
+          <Route path="/services/talent-acquisition" element={<TalentAcquisition />} />
+          <Route path="/services/dedicated-teams" element={<DedicatedTeams />} />
+          <Route path="/services/payroll-compliance" element={<PayrollCompliance />} />
+          <Route path="/services/hr-advisory" element={<HrAdvisory />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

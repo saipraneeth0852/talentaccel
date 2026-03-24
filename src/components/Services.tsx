@@ -7,13 +7,13 @@ const services = [
     icon: Users,
     title: "Talent Acquisition",
     desc: "We help companies hire the right talent quickly and efficiently.",
-    bullets: ["Permanent Hiring", "Contract Staffing", "Executive Search", "Tech & AI Hiring"],
+    bullets: ["Permanent Hiring", "Contract Staffing", "Executive Search", "Startup Hiring Support", "Tech & AI Hiring"],
   },
   {
     icon: UserCheck,
     title: "Dedicated Hiring Teams",
     desc: "Build your hiring engine with a dedicated TalentAccel recruitment team.",
-    bullets: ["Dedicated Recruiter", "Sourcing Specialist", "Hiring Analytics & Reporting"],
+    bullets: ["Dedicated Recruiter", "Dedicated Sourcing Specialist", "Hiring Analytics & Reporting"],
   },
   {
     icon: Globe,
@@ -25,13 +25,13 @@ const services = [
     icon: Calculator,
     title: "Payroll & Compliance Services",
     desc: "Simplify payroll and statutory compliance with our managed HR services.",
-    bullets: ["Payroll Processing", "PF / ESIC / PT Filings", "Labour Law Compliance", "Compliance Audits"],
+    bullets: ["Payroll Processing", "PF / ESIC / PT Filings", "Labour Law Compliance", "Contractor Payroll", "Compliance Audits"],
   },
   {
     icon: Settings,
     title: "HR Advisory & Operations",
     desc: "End-to-end HR support for growing companies.",
-    bullets: ["HR Policy Development", "HRMS Implementation", "Performance Management", "Employee Lifecycle"],
+    bullets: ["HR Policy Development", "HRMS Implementation", "Performance Management Frameworks", "Employee Lifecycle Management", "HR Compliance Advisory"],
   },
 ];
 
