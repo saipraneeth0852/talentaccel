@@ -11,6 +11,7 @@ import About from "./pages/About.tsx";
 import Careers from "./pages/Careers.tsx";
 import Contact from "./pages/Contact.tsx";
 import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import CaseStudiesPage from "./pages/CaseStudiesPage.tsx";
 import Industries from "./pages/Industries.tsx";
 import TalentAcquisition from "./pages/services/TalentAcquisition.tsx";
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/careers" element={<Careers />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/case-studies" element={<CaseStudiesPage />} />
           <Route path="/industries" element={<Industries />} />
           <Route path="/services/talent-acquisition" element={<TalentAcquisition />} />

@@ -12,6 +12,7 @@ const navItems = [
   { label: "Industries", href: "/industries", hash: "", icon: Building2 },
   { label: "Case Studies", href: "/case-studies", hash: "", icon: FileText },
   { label: "Blog", href: "/blog", hash: "", icon: Lightbulb },
+  { label: "Careers", href: "/careers", hash: "", icon: LayoutGrid },
   { label: "About", href: "/about", hash: "", icon: Users },
   { label: "Contact", href: "/contact", hash: "", icon: Phone },
 ];
@@ -19,7 +20,7 @@ const navItems = [
 const mobileNavItems = [
   { label: "Home", href: "/", hash: "", icon: Home },
   { label: "Services", href: "/#services", hash: "#services", icon: Briefcase },
-  { label: "Industries", href: "/industries", hash: "", icon: Building2 },
+  { label: "Careers", href: "/careers", hash: "", icon: LayoutGrid },
   { label: "About", href: "/about", hash: "", icon: Users },
   { label: "Contact", href: "/contact", hash: "", icon: Phone },
 ];

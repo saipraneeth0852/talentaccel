@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Upload, Briefcase, Users, ArrowRight } from "lucide-react";
+import { Upload, Briefcase, Users, ArrowRight, Star } from "lucide-react";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "@/components/AnimatedSection";
 import { Footer } from "@/components/Footer";
+import { JobApplicationModal } from "@/components/JobApplicationModal";
 
 const openRoles = [
   { title: "Senior Recruiter", dept: "Talent Acquisition", location: "Bangalore", type: "Full-time" },
@@ -19,6 +20,7 @@ const perks = [
 const Careers = () => {
   const [file, setFile] = useState<File | null>(null);
   const [form, setForm] = useState({ name: "", email: "", phone: "", role: "" });
+  const [applyRole, setApplyRole] = useState<typeof openRoles[0] | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -109,12 +111,12 @@ const Careers = () => {
                       <span className="inline-block px-2.5 py-0.5 rounded-full bg-secondary/10 text-secondary text-xs font-semibold">{role.type}</span>
                     </div>
                   </div>
-                  <a
-                    href="mailto:hr@talentaccel.com?subject=Job Application"
+                  <button
+                    onClick={() => setApplyRole(role)}
                     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-all whitespace-nowrap flex-shrink-0"
                   >
                     Apply Now <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
+                  </button>
                 </div>
               </StaggerItem>
             ))}
@@ -221,6 +223,62 @@ const Careers = () => {
           </div>
         </div>
       </section>
+
+      {/* Life at TalentAccel — image + culture section */}
+      <section className="py-24 lg:py-32">
+        <div className="container mx-auto px-6 lg:px-12">
+          <AnimatedSection className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary tracking-wide uppercase mb-3">Life at TalentAccel</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">A culture built on ambition & care</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              We move fast, but we build things right — including our team. Here's a glimpse of what it's like to work with us.
+            </p>
+          </AnimatedSection>
+
+          {/* Image grid */}
+          <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16 max-w-5xl mx-auto">
+            {[
+              { bg: "from-primary/20 to-primary/5", label: "Team Meetings", aspect: "md:col-span-2 md:row-span-2" },
+              { bg: "from-secondary/20 to-secondary/5", label: "Strategy Sessions", aspect: "" },
+              { bg: "from-primary/10 to-secondary/10", label: "Learning Days", aspect: "" },
+              { bg: "from-secondary/20 to-primary/10", label: "Celebrations", aspect: "md:col-span-2" },
+            ].map((item, i) => (
+              <StaggerItem key={i}>
+                <div
+                  className={`${item.aspect} rounded-2xl overflow-hidden bg-gradient-to-br ${item.bg} border border-border aspect-square flex flex-col items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:scale-[1.02] transition-transform duration-300`}
+                >
+                  <Star className="w-6 h-6 text-primary/40" />
+                  {item.label}
+                  <span className="text-xs text-muted-foreground/60">Photo coming soon</span>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+
+          {/* Culture values row */}
+          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {[
+              { emoji: "🚀", title: "Move Fast", desc: "We ship, iterate, and improve — every week." },
+              { emoji: "🤝", title: "People First", desc: "Empathy drives how we treat clients, candidates, and each other." },
+              { emoji: "📈", title: "Own It", desc: "Take initiative. Your impact is visible and recognized." },
+              { emoji: "🌏", title: "Think Big", desc: "We're building towards becoming India's top talent partner." },
+            ].map((v) => (
+              <StaggerItem key={v.title}>
+                <div className="p-5 rounded-2xl bg-card border border-border shadow-card text-center h-full">
+                  <div className="text-3xl mb-3">{v.emoji}</div>
+                  <h3 className="font-bold text-foreground mb-1.5">{v.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Application Modal */}
+      {applyRole && (
+        <JobApplicationModal role={applyRole} onClose={() => setApplyRole(null)} />
+      )}
 
       <Footer />
     </>
